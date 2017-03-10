@@ -28,12 +28,24 @@ This lesson was developed using a slimmed-down variant of the “Understanding b
 # Stage 2: Desired Results
 ## Questions
 ### How do I...
+* ...write programs I can read and re-use in future?
 
 ## Skills
 ### I can...
+* ...write short scripts in interactive notebook.
 
 ## Conceptes
 ### I know...
+* …that a program is a piece of lab equipment that implements an analysis
+  * Needs to be validated/calibrated before/during use
+  * Makes analysis reproducible, reviewable, shareable
+* …that programs are written for people, not for computers
+  * Meaningful variable names
+  * Modularity for readability as well as re-use
+  * No duplication
+  * Document purpose and use
+* ...where to find documentation on standard libraries
+* ...how to find out what else scientific Python offers
 
 # Stage 3: Learning Plan
 ## Running and Quitting Interactively (0:00)
@@ -55,10 +67,10 @@ This lesson was developed using a slimmed-down variant of the “Understanding b
 * Challenges: 0 min
   * None
 
-## (0:30)
+## Running Schrodinger Utilities (0:30)
 * Running Schrodinger Utilities 
 
-## (0:45)
+## Plotting with Matplotlib & Using R (0:45)
 * Plotting with Matplotlib & Using R
 
 ## Wrap-up (1:00)
