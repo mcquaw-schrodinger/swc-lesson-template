@@ -3,23 +3,25 @@ layout: page
 title: "Setup"
 permalink: /setup/
 ---
-# Prerequisites
+
+# System Prerequisites
 * Schrodinger 2017-1 installed
 * Create Schrodinger 2017-1 Python virtualenv
 * Install Jupyter package within virtualenv
 
 Please set up your python environment at least a day in advance of the workshop.  If you encounter problems with the installation procedure, ask your workshop organizers via e-mail for assistance so you are ready to go as soon as the workshop begins.
 
-1. Install Schrodinger 2017-1 software suite
+## Installation Instructions
+### Install Schrodinger 2017-1 software suite
 Instructions available at [Schrodinger website][schrodinger-install].
 
-1. Create Schrodinger 2017-1 Python virtualenv
+### Create Schrodinger 2017-1 Python virtualenv
 Working within a Schrodinger Python virtualenv allows for easy access of Schrodinger Python functionality without disruption of native Python installations and is strongly recommended.  More details regarding Schrodinger Python virtualenv can be found in the [documentation][schrodinger-virtualenv].
 
     # Confirm your version of SCHRODINGER is 2017-1
     echo $SCHRODINGER
 
-You should see something similar to...
+On MacOS, you should see something similar to...
 
     /opt/schrodinger/suites2017-1
 
@@ -39,7 +41,7 @@ You should see something similar to...
     If you change your SCHRODINGER environment variable, it will break the ability
     to use the unadorned python command.
 
-1. Install Jupyter package
+### Install Jupyter package
 Schrodinger 2017-1 comes with most, but not all of the required packages for running a Jupyter Notebook.  Simply use pip to install Jupyter in order to begin using a notebook.
 
 Verify that pip is utilizing your Schrodinger Python packages and install Jupyter.
