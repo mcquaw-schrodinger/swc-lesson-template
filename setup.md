@@ -3,90 +3,90 @@ layout: page
 title: "Setup"
 permalink: /setup/
 ---
+# Prerequisites
+* Schrodinger 2017-1 installed
+* Create Schrodinger 2017-1 Python virtualenv
+* Install Jupyter package within virtualenv
 
-## Installing Python Using Anaconda
+Please set up your python environment at least a day in advance of the workshop.  If you encounter problems with the installation procedure, ask your workshop organizers via e-mail for assistance so you are ready to go as soon as the workshop begins.
 
-[Python][python] is a popular language for scientific computing, and great for
-general-purpose programming as well. Installing all of its scientific packages
-individually can be a bit difficult, however, so we recommend the all-in-one
-installer [Anaconda][anaconda].
+1. Install Schrodinger 2017-1 software suite
+Instructions available at [Schrodinger website][schrodinger-install].
 
-Regardless of how you choose to install it, please make sure you install Python
-version 3.x (e.g., 3.4 is fine). Also, please set up your python environment at 
-least a day in advance of the workshop.  If you encounter problems with the 
-installation procedure, ask your workshop organizers via e-mail for assistance so
-you are ready to go as soon as the workshop begins.
+1. Create Schrodinger 2017-1 Python virtualenv
+Working within a Schrodinger Python virtualenv allows for easy access of Schrodinger Python functionality without disruption of native Python installations and is strongly recommended.  More details regarding Schrodinger Python virtualenv can be found in the [documentation][schrodinger-virtualenv].
 
-### Windows - [Video tutorial][video-windows]
+    # Confirm your version of SCHRODINGER is 2017-1
+    echo $SCHRODINGER
 
-1. Open [http://continuum.io/downloads][continuum-windows]
-   with your web browser.
+You should see something similar to...
 
-2. Download the Python 3 installer for Windows.
+    /opt/schrodinger/suites2017-1
 
-3. Double-click the executable and install Python 3 using _MOST_ of the
-   default settings. The only exception is to check the 
-   **Make Anaconda the default Python** option.
+Use the schrodinger_virtualenv.py script to create a local Schrodinger Python virtualenv.
 
-### Mac OS X - [Video tutorial][video-mac]
+    # Create virtualenv using Schrodinger Python
+    $SCHRODINGER/run schrodinger_virtualenv.py sch_v37
 
-1. Open [http://continuum.io/downloads][continuum-mac]
-   with your web browser.
+    # Activate the new virtualenv
+    source sch_v37/bin/activate
 
-2. Download the Python 3 installer for OS X.
+You should see something similar to...
 
-3. Install Python 3 using all of the defaults for installation.
+    Note: The Schrodinger virtualenv is tied to a specific SCHRODINGER value.
+    This virtualenv is tied to SCHRODINGER=/opt/schrodinger/suites2017-1.
 
-### Linux
+    If you change your SCHRODINGER environment variable, it will break the ability
+    to use the unadorned python command.
 
-Note that the following installation steps require you to work from the shell. 
-If you run into any difficulties, please request help before the workshop begins.
+1. Install Jupyter package
+Schrodinger 2017-1 comes with most, but not all of the required packages for running a Jupyter Notebook.  Simply use pip to install Jupyter in order to begin using a notebook.
 
-1.  Open [http://continuum.io/downloads][continuum-linux] with your web browser.
+Verify that pip is utilizing your Schrodinger Python packages and install Jupyter.
 
-2.  Download the Python 3 installer for Linux.
+    # Run Python from commandline and use get_python_lib() to print library directory
+    python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())"
 
-3.  Install Python 3 using all of the defaults for installation.
+You should see something similar to...
 
-    a.  Open a terminal window.
+    {directory of virtualenv}sch_v37/lib/python2.7/site-packages
 
-    b.  Navigate to the folder where you downloaded the installer
+Install the latest version of Jupyter (see the [Jupyter website][jupyter-install] for details).
 
-    c.  Type
+    # Use pip to install Jupyter 1.* 
+    pip install jupyter
+    
+    # Confirm Jupyter installation
+    pip show jupyter
+    
+You should see something similar to...
 
-    ~~~
-    $ bash Anaconda3-
-    ~~~
-    {: .bash}
-
-    and press tab.  The name of the file you just downloaded should appear.
-
-    d.  Press enter.
-
-    e.  Follow the text-only prompts.  When the license agreement appears (a colon
-        will be present at the bottom of the screen) hold the down arrow until the 
-        bottom of the text. Type `yes` and press enter to approve the license. Press 
-        enter again to approve the default location for the files. Type `yes` and 
-        press enter to prepend Anaconda to your `PATH` (this makes the Anaconda 
-        distribution the default Python).
+    Name: jupyter
+    Version: 1.0.0
+    Summary: Jupyter metapackage. Install all the Jupyter components in one go.
+    Home-page: http://jupyter.org
+    Author: Jupyter Development Team
+    Author-email: jupyter@googlegroups.org
+    License: BSD
+    Location: /Users/mcquaw/Virtualenvs/sch_v37/lib/python2.7/site-packages
+    Requires: ipykernel, qtconsole, jupyter-console, notebook, nbconvert, ipywidgets
 
 ## Getting the Data
 
+FIXME:
 The data we will be using is taken from the [gapminder][gapminder] dataset.
 To obtain it, download and unzip the file 
 [python-novice-gapminder-data.zip]({{page.root}}/files/python-novice-gapminder-data.zip).
 In order to follow the presented material, you should launch a Jupyter 
 notebook in the root directory (see [Starting Python](#Starting-Python)).
+FIXME:
 
 ## Starting Python
 
 We will teach Python using the [Jupyter notebook][jupyter], a 
 programming environment that runs in a web browser. Jupyter requires a reasonably 
 up-to-date browser, preferably a current version of Chrome, Safari, or Firefox 
-(note that Internet Explorer version 9 and below are *not* supported). If you 
-installed Python using Anaconda, Jupyter should already be on your system. If 
-you did not use Anaconda, use the Python package manager pip
-(see the [Jupyter website][jupyter-install] for details.)
+(note that Internet Explorer version 9 and below are *not* supported).
 
 To start the notebook, open a terminal or git bash and type the command:
 
@@ -103,13 +103,10 @@ $ python
 ~~~
 {: .bash}
 
-[anaconda]: https://www.continuum.io/anaconda
-[continuum-mac]: http://continuum.io/downloads#_macosx
-[continuum-linux]: http://continuum.io/downloads#_unix
-[continuum-windows]: http://continuum.io/downloads#_windows
+[schrodinger]: https://www.schrodinger.com/downloads/releases
+[schrodinger-install]: https://www.schrodinger.com/sites/default/files/s3/mkt/Documentation/2017-1/docs/Documentation.htm#install_guide/install_guideTOC.htm
+[schrodinger-virtualenv]: http://content.schrodinger.com/Docs/r2017-1/python_api/intro.html#experimental-environments-with-virtualenv
 [gapminder]: http://gapminder.org
 [jupyter]: http://jupyter.org/
 [jupyter-install]: http://jupyter.readthedocs.io/en/latest/install.html#optional-for-experienced-python-developers-installing-jupyter-with-pip
 [python]: https://python.org
-[video-mac]: https://www.youtube.com/watch?v=TcSAln46u9U
-[video-windows]: https://www.youtube.com/watch?v=xxQ0mzZ8UvA
