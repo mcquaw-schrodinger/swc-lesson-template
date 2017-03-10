@@ -99,38 +99,3 @@ Let's demonstrate how the magics exactly work with a small example:
     # Plot the DataFrame df
     ggplot(data=df) + geom_point(aes(x=A, y=B, color=C))
 This is just an initial not nearly everything you can do with R magics, though. You can also push variables from Python to R and pull them again to Python. Read up on the documentation (with easily accessible examples!) here.
-
-## Interactive Notebooks As Dashboards: Widgets
-
-The magic commands already do a lot to make your workflow with notebooks agreeable, but you can also take additional steps to make your notebook an interactive place for others by adding widgets to it!
-
-To add widgets to your notebook, you need to import widgets from ipywidgets:
-
-    from ipywidgets import widgets
-That's enough to get started! You might want to think now of what type of widget you want to add. The basic types of widgets are text input, buttons, and input-based widgets.  
-
-See an example of a text input widget below:
-<img alt="Interactive Jupyter Notebook Widgets" src="http://community.datacamp.com.s3.amazonaws.com/community/production/ckeditor_assets/pictures/201/content_jupyternotebook6b.gif">
-This example was taken from a wonderful tutorial on building interactive dashboards in Jupyter, which you can find on this page.
-
-# Share Your Jupyter Notebooks
-In practice, you might want to share your notebooks with colleagues or friends to show them what you have been up to or as a data science portfolio for future employers. However, the notebook documents are JSON documents that contain text, source code, rich media output, and metadata. Each segment of the document is stored in a cell.
-
-Ideally, you don't want to go around and share JSON files. 
-
-That's why you want to find and use other ways to share your notebook documents with others.
-
-When you create a notebook, you will see a button in the menu bar that says "File". When you click this, you see that Jupyter gives you the option to download your notebook as an HTML, PDF, Markdown or reStructuredText, or a Python script or a Notebook file.
-
-You can use the nbconvert command to convert your notebook document file to another static format, such as HTML, PDF, LaTex, Markdown, reStructuredText, ... But don't forget to import nbconvert first if you don't have it yet! 
-
-Then, you can give in something like the following command to convert your notebooks: 
-
-    jupyter nbconvert --to html Untitled4.ipynb
-With nbconvert, you can make sure that you can calculate an entire notebook non-interactively, saving it in place or to a variety of other formats. The fact that you can do this makes notebooks a powerful tool for ETL and for reporting. For reporting, you just make sure to schedule a run of the notebook every so many days, weeks or months; For an ETL pipeline, you can make use of the magic commands in your notebook in combination with some type of scheduling.
-
-Besides these options, you could also consider the following:
-
-You can create, list and load GitHub Gists from your notebook documents. You can find more information here. Gists are a way to share your work because you can share single files, parts of files, or full applications.
-With jupyterhub, you can spawn, manage, and proxy multiple instances of the single-user Jupyter notebook server. In other words, it's a platform for hosting notebooks on a server with multiple users. That makes it the ideal resource to provide notebooks to a class of students, a corporate data science group, or a scientific research group.
-Make use of binder and tmpnb to get temporary environments to reproduce your notebook execution. 
