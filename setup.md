@@ -93,20 +93,29 @@ Requires: ipykernel, qtconsole, jupyter-console, notebook, nbconvert, ipywidgets
 
 ## Getting the Data
 
-FIXME:
-The data we will be using is taken from the [gapminder][gapminder] dataset.
-To obtain it, download and unzip the file 
-[python-novice-gapminder-data.zip]({{page.root}}/files/python-novice-gapminder-data.zip).
-In order to follow the presented material, you should launch a Jupyter 
-notebook in the root directory (see [Starting Python](#Starting-Python)).
-FIXME:
+The data we will be using is taken from the Schrodinger [Auto-QSAR Tutorial][auto-qsar] dataset which is included in Schrodinger 2017-1 suite installation.
+
+~~~
+# Copy and unzip autoqsar.zip from $SCHRODINGER/tutorials/
+cp $SCHRODINGER/tutorials/autoqsar.zip .
+unzip autoqsar.zip
+
+Archive:  autoqsar.zip
+  inflating: factorXa_affinity_model.qzip
+  inflating: fxa_1z6e_train.maegz
+ extracting: fxa_predict.maegz
+  inflating: fxa_prediction-out.mae.gz
+  inflating: mutagen_model.qzip
+  inflating: mutagen_predict.maegz
+  inflating: mutagen_prediction-out.mae.gz
+  inflating: mutagenicity_2D_train_small.maegz
+~~~
+
+We will be working with the fxa_prediction-out.mae.gz dataset.
 
 ## Starting Python
 
-We will teach Python using the [Jupyter notebook][jupyter], a 
-programming environment that runs in a web browser. Jupyter requires a reasonably 
-up-to-date browser, preferably a current version of Chrome, Safari, or Firefox 
-(note that Internet Explorer version 9 and below are *not* supported).
+We will teach Python using the [Jupyter notebook][jupyter], a programming environment that runs in a web browser. Jupyter requires a reasonably up-to-date browser, preferably a current version of Chrome, Safari, or Firefox (note that Internet Explorer version 9 and below are *not* supported).
 
 To start the notebook, open a terminal or git bash and type the command:
 
@@ -117,7 +126,7 @@ $ jupyter notebook
 [schrodinger]: https://www.schrodinger.com/downloads/releases
 [schrodinger-install]: https://www.schrodinger.com/sites/default/files/s3/mkt/Documentation/2017-1/docs/Documentation.htm#install_guide/install_guideTOC.htm
 [schrodinger-virtualenv]: http://content.schrodinger.com/Docs/r2017-1/python_api/intro.html#experimental-environments-with-virtualenv
-[gapminder]: http://gapminder.org
 [jupyter]: http://jupyter.org/
 [jupyter-install]: http://jupyter.readthedocs.io/en/latest/install.html#optional-for-experienced-python-developers-installing-jupyter-with-pip
 [python]: https://python.org
+[auto-qsar]: https://www.schrodinger.com/sites/default/files/s3/mkt/Documentation/2017-1/docs/Documentation.htm#autoqsar_tutorial/autoqsar_tutorial_copying.htm
