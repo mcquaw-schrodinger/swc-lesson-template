@@ -18,60 +18,78 @@ Instructions available at [Schrodinger website][schrodinger-install].
 ### Create Schrodinger 2017-1 Python virtualenv
 Working within a Schrodinger Python virtualenv allows for easy access of Schrodinger Python functionality without disruption of native Python installations and is strongly recommended.  More details regarding Schrodinger Python virtualenv can be found in the [documentation][schrodinger-virtualenv].
 
-    # Confirm your version of SCHRODINGER is 2017-1
-    echo $SCHRODINGER
+~~~
+# Confirm your version of SCHRODINGER is 2017-1
+echo $SCHRODINGER
+~~~
 
 On MacOS, you should see something similar to...
 
-    /opt/schrodinger/suites2017-1
+~~~
+/opt/schrodinger/suites2017-1
+~~~
 
 Use the schrodinger_virtualenv.py script to create a local Schrodinger Python virtualenv.
 
-    # Create virtualenv using Schrodinger Python
-    $SCHRODINGER/run schrodinger_virtualenv.py sch_v37
+~~~
+# Create virtualenv using Schrodinger Python
+$SCHRODINGER/run schrodinger_virtualenv.py sch_v37
 
-    # Activate the new virtualenv
-    source sch_v37/bin/activate
+# Activate the new virtualenv
+source sch_v37/bin/activate
+~~~
 
 You should see something similar to...
 
-    Note: The Schrodinger virtualenv is tied to a specific SCHRODINGER value.
-    This virtualenv is tied to SCHRODINGER=/opt/schrodinger/suites2017-1.
+~~~
+Note: The Schrodinger virtualenv is tied to a specific SCHRODINGER value.
+This virtualenv is tied to SCHRODINGER=/opt/schrodinger/suites2017-1.
 
-    If you change your SCHRODINGER environment variable, it will break the ability
-    to use the unadorned python command.
+If you change your SCHRODINGER environment variable, it will break the ability
+to use the unadorned python command.
+~~~
 
 ### Install Jupyter package
 Schrodinger 2017-1 comes with most, but not all of the required packages for running a Jupyter Notebook.  Simply use pip to install Jupyter in order to begin using a notebook.
 
 Verify that pip is utilizing your Schrodinger Python packages and install Jupyter.
 
-    # Run Python from commandline and use get_python_lib() to print library directory
-    python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())"
+~~~
+# Run Python from commandline and use get_python_lib() to print library directory
+python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())"
+~~~
 
 You should see something similar to...
 
-    {directory of virtualenv}sch_v37/lib/python2.7/site-packages
+~~~
+{directory of virtualenv}sch_v37/lib/python2.7/site-packages
+~~~
 
 Install the latest version of Jupyter (see the [Jupyter website][jupyter-install] for details).
 
-    # Use pip to install Jupyter 1.* 
-    pip install jupyter
+~~~
+# Use pip to install Jupyter 1.* 
+pip install jupyter
+~~~
     
-    # Confirm Jupyter installation
-    pip show jupyter
+~~~
+# Confirm Jupyter installation
+pip show jupyter
+~~~
     
 You should see something similar to...
 
-    Name: jupyter
-    Version: 1.0.0
-    Summary: Jupyter metapackage. Install all the Jupyter components in one go.
-    Home-page: http://jupyter.org
-    Author: Jupyter Development Team
-    Author-email: jupyter@googlegroups.org
-    License: BSD
-    Location: /Users/mcquaw/Virtualenvs/sch_v37/lib/python2.7/site-packages
-    Requires: ipykernel, qtconsole, jupyter-console, notebook, nbconvert, ipywidgets
+~~~
+Name: jupyter
+Version: 1.0.0
+Summary: Jupyter metapackage. Install all the Jupyter components in one go.
+Home-page: http://jupyter.org
+Author: Jupyter Development Team
+Author-email: jupyter@googlegroups.org
+License: BSD
+Location: /Users/mcquaw/Virtualenvs/sch_v37/lib/python2.7/site-packages
+Requires: ipykernel, qtconsole, jupyter-console, notebook, nbconvert, ipywidgets
+~~~
 
 ## Getting the Data
 
@@ -95,15 +113,6 @@ To start the notebook, open a terminal or git bash and type the command:
 ~~~
 $ jupyter notebook
 ~~~
-{: .bash}
-
-To start the Python interpreter without the notebook, open a terminal 
-or Git Bash and type the command:
-
-~~~
-$ python
-~~~
-{: .bash}
 
 [schrodinger]: https://www.schrodinger.com/downloads/releases
 [schrodinger-install]: https://www.schrodinger.com/sites/default/files/s3/mkt/Documentation/2017-1/docs/Documentation.htm#install_guide/install_guideTOC.htm
